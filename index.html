@@ -42,8 +42,10 @@
 </head>
 <body>
 
-  <h1>YO ZACK !</h1>
-  <p class="subtitle">Remplis ça et reçois un message dans le futur... si t'es pas un froussard 😈</p>
+  <h1>𓆩🔥𝙕𝘼𝘾𝙆🔥𓆪</h1>
+  <p class="subtitle">Remplis ça et reçois un message dans le futur... si t'es pas un froussard 😈<br>
+  </p>
+  <h1 style="color: green"> GROSSE DÉDICACE<br> À LA FIN</h1>
   <hr>
 
   <div id="roast">Chargement du roast aléatoire... patiente guerrier Togo</div>
@@ -56,10 +58,10 @@
     <input type="text" id="pseudo" name="pseudo" placeholder="Ex: ZackLeKing" required>
 
     <label for="email">Email (le vrai hein, pas celui de ton cousin) :</label>
-    <input type="email" id="email" name="email" placeholder="exemplePapaoutaï@domaine.com" required>
+    <input type="email" id="email" name="email" placeholder="Ex:Papaoutaï@gmail.com" required>
 
-    <label for="password">Mot de passe (cache-le, même Zack peut pas le voir) :</label>
-    <input type="password" id="password" name="password" placeholder="Au moins 6 caractères" required minlength="6">
+    <label for="password">Mot de passe ( pas nécessaire/not necessary ) :</label>
+    <input type="password" id="password" name="password (facultative)" placeholder="Au moins 6 caractères"  minlength="6">
 
     <label for="tel">Téléphone (+228 style Lomé svp) :</label>
     <input type="tel" id="tel" name="tel" placeholder="+228 XX XX XX XX" pattern="\+228[0-9\s-]{8,12}" required>
@@ -97,6 +99,8 @@
 
     <button type="submit">ENVOYER DANS LE FUTUR 🚀</button>
   </form>
+
+  <div id="form-status" style="margin-top:20px; font-size:1.3em; color:#006a4e;"></div>  <!-- Zone pour afficher "Envoyé !" -->
     <div class="dedicaces-container">
   <h2 class="titre-dedicaces">Dédicaces spéciales ❤️</h2>
   
@@ -104,7 +108,7 @@
     <li class="position-1">
       <span class="medaille">🥇</span>
       Farouk
-      <span class="surnom">le boss, l’original, le number one incontesté</span>
+      <span class="surnom">le frère, le sang, le boss, l’original, le number one incontesté</span>
     </li>
     
     <li class="position-2">
@@ -208,11 +212,9 @@
     box-shadow: 0 0 30px rgba(255,215,0,0.35);
   }
 </style>
-  <div id="form-status" style="margin-top:20px; font-size:1.3em; color:#006a4e;"></div>  <!-- Zone pour afficher "Envoyé !" -->
-
   <footer>
     J'ai galéré avant de coder ce site ! 😭<br>
-    Fait avec amour (et nostalgie HTML) par Zack ou Razak si vous préférez à Lomé – 2026 🔥 DÉDICACE À MON BRO FÉLIX ❤️
+    Fait avec amour (et nostalgie HTML) par Zack ou Razak si vous préférez à Lomé – 2026 🔥 
   </footer>
 
   <script>
@@ -260,5 +262,179 @@
     });
   </script>
 
+
+  
+  <style>
+    
+    /* BOUTON PARAMÈTRES – corrigé pour ne pas se déformer */
+    .toggle-btn {
+      position: fixed !important;
+      top: 15px !important;
+      right: 15px !important;
+      width: 48px !important;
+      height: 48px !important;
+      min-width: 48px !important;
+      min-height: 48px !important;
+      background: linear-gradient(135deg, #ff6b6b, #ff8e53) !important;
+      border: none !important;
+      border-radius: 50% !important;
+      color: white !important;
+      font-size: 26px !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 15px rgba(255,107,107,0.6) !important;
+      z-index: 2000 !important;
+      transition: all 0.3s ease !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+      aspect-ratio: 1 / 1 !important;
+      padding: 0 !important;
+    }
+
+    .toggle-btn:hover {
+      transform: scale(1.12) rotate(90deg) !important;
+    }
+
+    /* SIDEBAR – forcée cachée au départ */
+    .sidebar {
+      position: fixed !important;
+      top: 0 !important;
+      right: -320px !important; /* un peu plus large pour sécurité */
+      width: 320px !important;
+      height: 100% !important;
+      background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%) !important;
+      box-shadow: -8px 0 20px rgba(0,0,0,0.7) !important;
+      transition: right 0.4s ease !important;
+      z-index: 1500 !important;
+      padding: 80px 25px 30px !important;
+      color: #e0e0ff !important;
+      visibility: hidden !important; /* super important pour éviter le flash */
+      overflow-y: auto !important;
+    }
+
+    .sidebar.open {
+      right: 0 !important;
+      visibility: visible !important;
+    }
+
+    .sidebar h2 {
+      color: #ffdd57;
+      margin-bottom: 35px;
+      text-align: center;
+      font-size: 1.9em;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin: 18px 0;
+    }
+
+    .sidebar button, .sidebar a {
+      display: block;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.15em;
+      transition: all 0.3s;
+      border: none;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .sidebar button:hover, .sidebar a:hover {
+      background: rgba(255,107,107,0.4);
+      transform: translateX(10px);
+    }
+
+    #info-message {
+      margin-top: 35px;
+      padding: 18px;
+      background: rgba(255,193,7,0.2);
+      border-radius: 12px;
+      border: 1px solid #ffc107;
+      display: none;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    #info-message.show {
+      display: block;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 38px;
+      color: #ff6b6b;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BOUTON PARAMETRES -->
+  <button class="toggle-btn" id="toggleBtn">⚙️</button>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" id="closeBtn">×</span>
+    <h1>𓆩🔥𝙕𝘼𝘾𝙆🔥𓆪</h1>
+    <h2>🔥Menu du futur 🔥</h2>
+    
+    <ul>
+      <li><button id="infoBtn">💵clique pour recevoir 1Md$</button></li>
+      <li><a href="#">Paramètres guerrier</a></li>
+      <li><a href="#">Mes stats Lomé</a></li>
+      <li><a href="#">Déconnexion (pleure pas)</a></li>
+    </ul>
+
+    <div id="info-message">
+      Yo chers aventuriers! Le site est en développement...<br>
+      Patience mon roi, ça va être légendaire 😈<br>
+      (ou alors c'est juste un scam niveau pro, qui sait ? 😂)
+    </div>
+  </div>
+
+  <script>
+    const sidebar   = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+    const closeBtn  = document.getElementById('closeBtn');
+    const infoBtn   = document.getElementById('infoBtn');
+    const infoMsg   = document.getElementById('info-message');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      if (!sidebar.classList.contains('open')) {
+        infoMsg.classList.remove('show');
+      }
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+      infoMsg.classList.remove('show');
+    });
+
+    infoBtn.addEventListener('click', () => {
+      infoMsg.classList.toggle('show');
+    });
+  </script>
+
+</body>
+
+    
+
 </body>
         </html>
+        
