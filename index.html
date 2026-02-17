@@ -3,111 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zack le Boss - Inscris-toi et reçois un message dans le futur</title>
+  <title>YO ZACK ! - Message du futur 😏</title>
   <style>
-    body, form { max-width: 100%; overflow-x: hidden; }
-input, select, textarea, button { box-sizing: border-box; width: 100%; }
-.radio-group label, .checkbox-group label { display: block; margin: 10px 0; }
+    body {
+      background: linear-gradient(to right, #11998e, #38ef7d, #FFD700);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      text-align: center;
+    }
+    h1 { color: #ff5722; font-size: 3em; margin: 10px 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+    .subtitle { color: #d32f2f; font-size: 1.4em; margin-bottom: 20px; }
+    hr { border: 3px solid #d32f2f; width: 80%; margin: 20px auto; }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.75);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    label { display: block; margin: 15px 0 5px; font-weight: bold; color: #c2185b; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="date"], select, textarea {
+      width: 100%; padding: 12px; margin-bottom: 10px; border: 2px solid #ff9800; border-radius: 8px; font-size: 1.1em; box-sizing: border-box;
+    }
+    .radio-group, .checkbox-group { text-align: left; margin: 15px 0; }
+    .radio-group label, .checkbox-group label { display: block; margin: 10px 0; font-weight: normal; color: #000; }
+    input[type="radio"], input[type="checkbox"] { transform: scale(1.5); margin-right: 10px; }
+    textarea { height: 120px; resize: vertical; }
+    button {
+      background: #006a4e; color: white; border: none; padding: 18px 40px; font-size: 1.4em; border-radius: 12px; cursor: pointer; margin-top: 30px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    button:hover { background: #004d38; }
+    #roast { font-size: 1.2em; color: #b71c1c; margin: 20px 0; font-style: italic; }
+    footer { margin-top: 40px; font-size: 0.9em; color: #555; }
   </style>
 </head>
+<body>
 
-<body bgcolor="#FFEB3B" text="#000000">  <!-- Fond jaune flashy pour réveiller les yeux -->
+  <h1>YO ZACK !</h1>
+  <p class="subtitle">Remplis ça et reçois un message dans le futur... si t'es pas un froussard 😈</p>
+  <hr>
 
-<center>
-  <font face="Comic Sans MS, cursive" size="7" color="#FF5722">
-    <b>YO ZACK !</b>
-  </font>
-  
-  <br><br>
-  
-  <font face="Arial" size="5" color="#2196F3">
-    <i>Formulaire de ouf – Remplis tout ou t'es pas un vrai pote</i>
-  </font>
-  
-  <hr color="#E91E63" size="5">  <!-- Barre rose qui claque -->
-  
-  <form action="https://formsubmit.co/6zchz9@gmail.com" method="POST">
-    
-    <!-- Champs cachés pour que FormSubmit soit stylé -->
-    <input type="hidden" name="_subject" value="NOUVEAU POTENTIEL LEGENDE sur ton site 🔥">
-    <input type="hidden" name="_next" value="https://tonsite.netlify.app/merci.html"> <!-- Mets ton URL merci si tu veux -->
-    <input type="hidden" name="_captcha" value="false"> <!-- Optionnel : skip captcha si t'as confiance -->
-    
-    <p>
-      <font color="#4CAF50" size="4"><b>Ton pseudo de guerrier :</b></font><br>
-      <input type="text" name="pseudo" placeholder="Ex: ZackLeKing" size="30" maxlength="20" required>
-    </p>
-    
-    <p>
-      <font color="#F44336" size="4"><b>Email (le vrai hein) :</b></font><br>
-      <input type="email" name="email" placeholder="exemple@domaine.com" size="35" required>
-    </p>
-    
-    <p>
-      <font color="#9C27B0" size="4"><b>Mot de passe (cache-le bien !) :</b></font><br>
-      <input type="password" name="motdepasse" placeholder="Au moins 6 caractères" size="30" minlength="6" required>
-    </p>
-    
-    <p>
-      <font color="#FF9800" size="4"><b>Téléphone (avec +228 pour le style Togo) :</b></font><br>
-      <input type="tel" name="tel" placeholder="+228 XX XX XX XX" pattern="\+?[0-9\s-]{8,15}" size="25">
-    </p>
-    
-    <p>
-      <font color="#3F51B5" size="4"><b>Ton âge (sois honnête frr) :</b></font><br>
-      <input type="number" name="age" min="13" max="100" placeholder="Entre 13 et 100" size="10"><br>
-      <input type="text" name="ton crush" placeholder="c'est qui ton crush" size="35">
-    </p>
-    
-    <p>
-      <font color="#009688" size="4"><b>T'es un :</b></font><br>
-      <input type="radio" name="genre" value="garcon" id="g" checked> <label for="g"><font color="#000">Garçon</font></label><br>
-      <input type="radio" name="genre" value="fille" id="f"> <label for="f"><font color="#000">Fille</font></label><br>
-      <input type="radio" name="genre" value="autre" id="a"> <label for="a"><font color="#000">Autre / Pas d'ton business</font></label>
-    </p>
-    
-    <p>
-      <font color="#795548" size="4"><b>Pays (t'es où là ?) :</b></font><br>
-      <select name="pays" size="1">
-        <option value="Togo">Togo (Lomé la capitale du swag)</option>
-        <option value="Benin">Bénin</option>
-        <option value="Nigeria">Nigeria</option>
-        <option value="Ghana">Ghana</option>
-        <option value="cameroun">Cameroun</option>
-        <option value="Autre">Autre (t'es un globe-trotter)</option>
-      </select>
-    </p>
-    
-    <p>
-      <font color="#E91E63" size="4"><b>Tu kiffes quoi ? (choisis plusieurs) :</b></font><br>
-      <input type="checkbox" name="interets[]" value="foot"> Foot ⚽<br>
-      <input type="checkbox" name="interets[]" value="musique"> Musique afrobeat 🎶<br>
-      <input type="checkbox" name="interets[]" value="jeux"> Jeux vidéo / Fifa 🕹️<br>
-      <input type="checkbox" name="interets[]" value="manger"> Manger fufu/attiéké 🍲<br>
-      <input type="checkbox" name="interests[]" value="les réseaux sociaux"> les réseaux sociaux<br>
-      <input type="checkbox" name="interets[]" value="autre"> Autre chose de ouf
-    </p>
-    
-    <p>
-      <font color="#673AB7" size="4"><b>Dis-moi un truc marrant ou une dinguerie :</b></font><br>
-      <textarea name="message" rows="6" cols="40" placeholder="Écris ici ton histoire de fou... ou juste 'salut Zack t'es le goat' 😏" required></textarea>
-    </p>
-    
-    <br>
-    <input type="submit" value="ENVOYER UN MESSAGE À MON FUTUR MOI" style="background-color:#4CAF50; color:white; font-size:20px; padding:12px 30px; border:none; cursor:pointer;">
-    
-    <br><br>
-    <font size="3" color="#757575">J'ai galéré avant de codé ce site !</font>
-  
+  <div id="roast">Chargement du roast aléatoire... patiente guerrier Togo</div>
+
+  <form action="https://formspree.io/f/ton-id-ici" method="POST">  <!-- mets ton vrai endpoint Formspree si tu veux recevoir les réponses -->
+
+    <label for="pseudo">Ton pseudo de guerrier :</label>
+    <input type="text" id="pseudo" name="pseudo" placeholder="Ex: ZackLeKing" required>
+
+    <label for="email">Email (le vrai hein, pas celui de ton cousin) :</label>
+    <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required>
+
+    <label for="password">Mot de passe (cache-le, même Zack peut pas le voir) :</label>
+    <input type="password" id="password" name="password" placeholder="Au moins 6 caractères" required minlength="6">
+
+    <label for="tel">Téléphone (+228 style Lomé svp) :</label>
+    <input type="tel" id="tel" name="tel" placeholder="+228 XX XX XX XX" pattern="\+228[0-9\s-]{8,12}" required>
+
+    <label for="age">Ton âge (sois honnête frr) :</label>
+    <input type="number" id="age" name="age" placeholder="Entre 13 et 100" min="13" max="100" required>
+
+    <div class="radio-group">
+      <label>T'es un :</label><br>
+      <input type="radio" id="garcon" name="genre" value="Garçon" required> <label for="garcon">Garçon 💪</label><br>
+      <input type="radio" id="fille" name="genre" value="Fille"> <label for="fille">Fille 🔥</label><br>
+      <input type="radio" id="autre" name="genre" value="Autre"> <label for="autre">Autre / Pas d'ton business 🦁</label>
+    </div>
+
+    <label for="pays">Pays (t'es où là ?) :</label>
+    <select id="pays" name="pays" required>
+      <option value="Togo">Togo (Lomé la capitale du swag) 🇹🇬</option>
+      <!-- ajoute d'autres si tu veux -->
+    </select>
+
+    <div class="checkbox-group">
+      <label>Tu kiffes quoi ? (plusieurs OK) :</label><br>
+      <input type="checkbox" id="foot" name="kiffs[]" value="Foot"> <label for="foot">Foot ⚽</label><br>
+      <input type="checkbox" id="musique" name="kiffs[]" value="Musique"> <label for="musique">Musique afrobeat 🎶</label><br>
+      <input type="checkbox" id="jeux" name="kiffs[]" value="Jeux"> <label for="jeux">Jeux vidéo / Fifa 🎮</label><br>
+      <input type="checkbox" id="manger" name="kiffs[]" value="Manger"> <label for="manger">Fufu / attiéké 🍲</label><br>
+      <input type="checkbox" id="autre" name="kiffs[]" value="Autre"> <label for="autre">Autre chose de ouf 😜</label>
+    </div>
+
+    <label for="receiveDate">Quand veux-tu recevoir ton message dans le futur ?</label>
+    <input type="date" id="receiveDate" name="receive_date" required>
+
+    <label for="dinguerie">Dis-moi un truc marrant ou une dinguerie :</label>
+    <textarea id="dinguerie" name="dinguerie" placeholder="Écris ton histoire de fou... ou juste 'salut Zack t'es le goat' 😎" required></textarea>
+
+    <button type="submit">ENVOYER DANS LE FUTUR 🚀</button>
   </form>
-  
-  <hr color="#FF5722" size="4">
-  
-  <font size="2" color="#333">
-    Fait avec amour (et un peu de nostalgie HTML) par Zack à Lomé – 2026 🔥
-    DÉDICACE À MON BRO FÉLIX 
-  </font>
-</center>
+
+  <footer>
+    J'ai galéré avant de coder ce site ! 😭<br>
+    Fait avec amour (et nostalgie HTML) par Zack à Lomé – 2026 🔥 DÉDICACE À MON BRO FÉLIX ❤️
+  </footer>
+
+  <script>
+    // Bloque dates passées pour le receiveDate
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('receiveDate').setAttribute('min', today);
+
+    // Roast aléatoire marrant au chargement
+    const roasts = [
+      "T'as rempli ça pour de vrai ou juste pour voir si Zack est toujours en vie ? 😂",
+      "Si t'écris pas de dinguerie, ton message futur dira juste 't'es nul' 😏",
+      "Lomé connection faible ? Patience, ton futur toi t'attend... ou pas 🔥",
+      "Remplis vite avant que Félix te vole ton pseudo goat 🦁",
+      "T'es le 1er... ou le 1000ème ? Mystère 😈"
+    ];
+    const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+    document.getElementById('roast').textContent = randomRoast;
+  </script>
 
 </body>
-</html>
+        </html>
