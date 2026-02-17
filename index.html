@@ -2,7 +2,13 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Zack le Boss - Inscris-toi ou pleure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zack le Boss - Inscris-toi et reçois un message dans le futur</title>
+  <style>
+    body, form { max-width: 100%; overflow-x: hidden; }
+input, select, textarea, button { box-sizing: border-box; width: 100%; }
+.radio-group label, .checkbox-group label { display: block; margin: 10px 0; }
+  </style>
 </head>
 
 <body bgcolor="#FFEB3B" text="#000000">  <!-- Fond jaune flashy pour réveiller les yeux -->
@@ -49,7 +55,8 @@
     
     <p>
       <font color="#3F51B5" size="4"><b>Ton âge (sois honnête frr) :</b></font><br>
-      <input type="number" name="age" min="13" max="100" placeholder="Entre 13 et 100" size="10">
+      <input type="number" name="age" min="13" max="100" placeholder="Entre 13 et 100" size="10"><br>
+      <input type="text" name="ton crush" placeholder="c'est qui ton crush" size="35">
     </p>
     
     <p>
@@ -66,6 +73,7 @@
         <option value="Benin">Bénin</option>
         <option value="Nigeria">Nigeria</option>
         <option value="Ghana">Ghana</option>
+        <option value="cameroun">Cameroun</option>
         <option value="Autre">Autre (t'es un globe-trotter)</option>
       </select>
     </p>
@@ -76,6 +84,7 @@
       <input type="checkbox" name="interets[]" value="musique"> Musique afrobeat 🎶<br>
       <input type="checkbox" name="interets[]" value="jeux"> Jeux vidéo / Fifa 🕹️<br>
       <input type="checkbox" name="interets[]" value="manger"> Manger fufu/attiéké 🍲<br>
+      <input type="checkbox" name="interests[]" value="les réseaux sociaux"> les réseaux sociaux<br>
       <input type="checkbox" name="interets[]" value="autre"> Autre chose de ouf
     </p>
     
@@ -85,7 +94,7 @@
     </p>
     
     <br>
-    <input type="submit" value="ENVOYER ET DEVENIR LEGENDE" style="background-color:#4CAF50; color:white; font-size:20px; padding:12px 30px; border:none; cursor:pointer;">
+    <input type="submit" value="ENVOYER UN MESSAGE À MON FUTUR MOI" style="background-color:#4CAF50; color:white; font-size:20px; padding:12px 30px; border:none; cursor:pointer;">
     
     <br><br>
     <font size="3" color="#757575">J'ai galéré avant de codé ce site !</font>
