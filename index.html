@@ -38,245 +38,84 @@
     button:hover { background: #004d38; }
     #roast { font-size: 1.2em; color: #b71c1c; margin: 20px 0; font-style: italic; }
     footer { margin-top: 40px; font-size: 0.9em; color: #555; }
-  </style>
-</head>
-<body>
-
-  <h1>𓆩🔥𝙕𝘼𝘾𝙆🔥𓆪</h1>
-  <p class="subtitle">Remplis ça et reçois un message dans le futur.... si t'es pas un froussard 😈<br>
-  </p>
-  <h1 style="color: green"> GROSSE DÉDICACE<br> À LA FIN</h1>
-  <hr>
-
-  <div id="roast">Chargement du roast aléatoire... patiente guerrier Togo</div>
-<form action="https://api.web3forms.com" method="POST">
-    <!-- Garde l'input ci-dessous, il est obligatoire pour que Web3Forms reçoive le message -->
-    <input type="hidden" name="access_key" value="8c90d297-2253-4932-bce2-92ca23b36a5c">
-
-    <!-- Tes inputs et ton bouton déjà créés se mettent ici -->
     
-    <label for="pseudo">Ton pseudo de guerrier :</label>
-    <input type="text" id="pseudo" name="pseudo" placeholder="Ex: ZackLeKing" required>
+    /* Style pour les dédicaces */
+    .dedicaces-container {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      color: #f0f0ff;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
 
-    <label for="email">Email (le vrai hein, pas celui de ton cousin) :</label>
-    <input type="email" id="email" name="email" placeholder="Ex:Papaoutaï@gmail.com" required>
+    .titre-dedicaces {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      color: #ffdd57;
+      text-shadow: 0 0 15px rgba(255,221,87,0.6);
+      letter-spacing: 1px;
+    }
 
-    <label for="password">Mot de passe ( pas nécessaire/not necessary ) :</label>
-    <input type="password" id="password" name="password (facultative)" placeholder="Au moins 6 caractères"  minlength="6">
+    .liste-dedicaces {
+      list-style: none;
+      counter-reset: rang;
+      padding: 0;
+    }
 
-    <label for="tel">Téléphone (+228 style Lomé svp) :</label>
-    <input type="tel" id="tel" name="tel" placeholder="+228 XX XX XX XX" pattern="\+228[0-9\s-]{8,12}" required>
+    .liste-dedicaces li {
+      position: relative;
+      padding: 1.4rem 1.4rem 1.4rem 5.5rem;
+      margin-bottom: 1.2rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      border-left: 5px solid;
+      transition: all 0.25s ease;
+    }
 
-    <label for="age">Ton âge (sois honnête frr) :</label>
-    <input type="number" id="age" name="age" placeholder="Entre 13 et 100" min="13" max="100" required>
+    .liste-dedicaces li:hover {
+      transform: translateX(8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
 
-    <div class="radio-group">
-      <label>T'es un :</label><br>
-      <input type="radio" id="garcon" name="genre" value="Garçon" required> <label for="garcon">Garçon 💪</label><br>
-      <input type="radio" id="fille" name="genre" value="Fille"> <label for="fille">Fille 🔥</label><br>
-      <input type="radio" id="autre" name="genre" value="Autre"> <label for="autre">Autre / Pas d'ton business 🦁</label>
-    </div>
+    .position-1 { border-left-color: #ffd700; background: rgba(255,215,0,0.08); }
+    .position-2 { border-left-color: #c0c0c0; background: rgba(192,192,192,0.06); }
+    .position-3 { border-left-color: #cd7f32; background: rgba(205,127,50,0.06); }
+    .position-4 { border-left-color: #a78bfa; background: rgba(167,139,250,0.05); }
 
-    <label for="pays">Pays (t'es où là ?) :</label>
-    <select id="pays" name="pays" required>
-      <option value="Togo">Togo (Lomé la capitale du swag) 🇹🇬</option>
-      <!-- ajoute d'autres si tu veux -->
-    </select>
+    .medaille {
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.1rem;
+    }
 
-    <div class="checkbox-group">
-      <label>Tu kiffes quoi ? (plusieurs OK) :</label><br>
-      <input type="checkbox" id="foot" name="kiffs[]" value="Foot"> <label for="foot">Foot ⚽</label><br>
-      <input type="checkbox" id="musique" name="kiffs[]" value="Musique"> <label for="musique">Musique afrobeat 🎶</label><br>
-      <input type="checkbox" id="jeux" name="kiffs[]" value="Jeux"> <label for="jeux">Jeux vidéo / Fifa 🎮</label><br>
-      <input type="checkbox" id="manger" name="kiffs[]" value="Manger"> <label for="manger">Fufu / attiéké 🍲</label><br>
-      <input type="checkbox" id="autre" name="kiffs[]" value="Autre"> <label for="autre">Autre chose de ouf 😜</label>
-    </div>
+    .liste-dedicaces li {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: white;
+    }
 
-    <label for="receiveDate">Quand veux-tu recevoir ton message dans le futur ?</label>
-    <input type="date" id="receiveDate" name="receive_date" required>
+    .surnom {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #d1d1ff;
+      opacity: 0.9;
+      font-style: italic;
+    }
 
-    <label for="dinguerie">ÉCRIT UN MESSAGE À TON FUTUR TOI:</label>
-    <textarea id="dinguerie" name="dinguerie" placeholder="Écris ton histoire de fou... ou juste 'salut Zack t'es le goat' 😎" required></textarea>
-
-    <button type="submit">ENVOYER DANS LE FUTUR 🚀</button>
-  </form>
-
-  <div id="form-status" style="margin-top:20px; font-size:1.3em; color:#006a4e;"></div>  <!-- Zone pour afficher "Envoyé !" -->
-    <div class="dedicaces-container">
-  <h2 class="titre-dedicaces">Dédicaces spéciales ❤️</h2>
-  
-  <ol class="liste-dedicaces">
-    <li class="position-1">
-      <span class="medaille">🥇</span>
-      Farouk
-      <span class="surnom">le frère, le sang, le boss, l’original, le number one incontesté</span>
-    </li>
-
-        <li class="position-1">
-      <span class="medaille">🥈</span>
-      Hassan
-      <span class="surnom">le frère, le sang, le boss, l’original, le goat kw</span>
-    </li>
-    <li class="position-2">
-      <span class="medaille">🥉</span>
-      Félix
-      <span class="surnom">le crack discret qui arrive toujours 3ᵉ… mais en vrai il gagne dans nos cœurs</span>
-    </li>
+    /* petit effet glow sur hover pour le 1er */
+    .position-1:hover {
+      box-shadow: 0 0 30px rgba(255,215,0,0.35);
+    }
     
-    <li class="position-3">
-      <span class="medaille">🏅</span>
-      Prunelle
-      <span class="surnom">la reine des vibes, la tornade douce, 4ᵉ mais jamais dernière dans nos mémoires</span>
-    </li>
-    
-    <li class="position-4">
-      <span class="medaille">✨</span>
-      Anifa
-      <span class="surnom">la pépite qui monte, la future légende, déjà 5ᵉ du classement des chouchous</span>
-    </li>
-  </ol>
-</div>
-
-<style>
-  .dedicaces-container {
-    max-width: 700px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    color: #f0f0ff;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-  }
-
-  .titre-dedicaces {
-    text-align: center;
-    font-size: 2.4rem;
-    margin-bottom: 2rem;
-    color: #ffdd57;
-    text-shadow: 0 0 15px rgba(255,221,87,0.6);
-    letter-spacing: 1px;
-  }
-
-  .liste-dedicaces {
-    list-style: none;
-    counter-reset: rang;
-    padding: 0;
-  }
-
-  .liste-dedicaces li {
-    position: relative;
-    padding: 1.4rem 1.4rem 1.4rem 5.5rem;
-    margin-bottom: 1.2rem;
-    background: rgba(255,255,255,0.06);
-    border-radius: 12px;
-    border-left: 5px solid;
-    transition: all 0.25s ease;
-  }
-
-  .liste-dedicaces li:hover {
-    transform: translateX(8px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  }
-
-  .position-1 { border-left-color: #ffd700; background: rgba(255,215,0,0.08); }
-  . position-0 {
-    border-left-color: lightblue;
-    background: rgba(255,215,0,0.08); }
-  }
-  .position-2 { border-left-color: #c0c0c0; background: rgba(192,192,192,0.06); }
-  .position-3 { border-left-color: #cd7f32; background: rgba(205,127,50,0.06); }
-  .position-4 { border-left-color: #a78bfa; background: rgba(167,139,250,0.05); }
-
-  .medaille {
-    position: absolute;
-    left: 1.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2.1rem;
-  }
-
-  .liste-dedicaces li span:first-child {
-    font-size: 2.8rem;
-    line-height: 1;
-  }
-
-  .liste-dedicaces li {
-    font-size: 1.45rem;
-    font-weight: 600;
-    color: white;
-  }
-
-  .surnom {
-    display: block;
-    margin-top: 0.4rem;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #d1d1ff;
-    opacity: 0.9;
-    font-style: italic;
-  }
-
-  /* petit effet glow sur hover pour le 1er */
-  .position-1:hover {
-    box-shadow: 0 0 30px rgba(255,215,0,0.35);
-  }
-</style>
-  <footer>
-    J'ai galéré avant de coder ce site ! 😭<br>
-    Fait avec amour (et nostalgie HTML) par Zack ou Razak si vous préférez à Lomé – 2026 🔥 
-  </footer>
-
-  <script>
-    // Bloque dates passées pour le receiveDate
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('receiveDate').setAttribute('min', today);
-
-    // Roast aléatoire marrant au chargement
-    const roasts = [
-      "T'as rempli ça pour de vrai ou juste pour voir si Zack est toujours en vie ? 😂",
-      "Si t'écris pas de dinguerie, ton message futur dira juste 't'es nul' 😏",
-      "Lomé connection faible ? Patience, ton futur toi t'attend... ou pas 🔥",
-      "Remplis vite avant que Félix te vole ton pseudo goat 🦁",
-      "T'es le 1er... ou le 1000ème ? Mystère 😈"
-    ];
-    const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
-    document.getElementById('roast').textContent = randomRoast;
-
-    // Gestion envoi formulaire (sans recharger la page)
-    const form = document.querySelector('form');
-    const statusDiv = document.getElementById('form-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      statusDiv.textContent = 'Envoi dans le futur... attends 2 sec 😏';
-
-      const formData = new FormData(form);
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          statusDiv.innerHTML = 'Envoyé ! Ton message est parti dans le futur 🚀<br>Check tes mails plus tard.';
-          form.reset();  // Vide le form
-        } else {
-          statusDiv.textContent = 'Oups, y’a eu un couac 😭 Réessaie.';
-        }
-      } catch (error) {
-        statusDiv.textContent = 'Pas de réseau ? Le futur attendra un peu...';
-      }
-    });
-  </script>
-
-
-  
-  <style>
-    
-    /* BOUTON PARAMÈTRES – corrigé pour ne pas se déformer */
+    /* Style pour le bouton paramètres */
     .toggle-btn {
       position: fixed !important;
       top: 15px !important;
@@ -410,13 +249,155 @@
     </ul>
 
     <div id="info-message">
-      Yo chers aventuriers! Le site est en développement...<br>
+      Yo chers aventuriers! Le site est en développement....<br>
       Patience mon roi, ça va être légendaire 😈<br>
       (ou alors c'est juste un scam niveau pro, qui sait ? 😂)
     </div>
   </div>
 
+  <h1>𓆩🔥𝙕𝘼𝘾𝙆🔥𓆪</h1>
+  <p class="subtitle">Remplis ça et reçois un message dans le futur.... si t'es pas un froussard 😈<br>
+  </p>
+  <h1 style="color: green"> GROSSE DÉDICACE<br> À LA FIN</h1>
+  <hr>
+
+  <div id="roast">Chargement du roast aléatoire... patiente guerrier Togo</div>
+  
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="159e834a-ec16-4cae-b86d-876626f410e2">
+  
+    <label for="pseudo">Ton pseudo de guerrier :</label>
+    <input type="text" id="pseudo" name="pseudo" placeholder="Ex: ZackLeKing" required>
+
+    <label for="email">Email (le vrai hein, pas celui de ton cousin) :</label>
+    <input type="email" id="email" name="email" placeholder="Ex:Papaoutaï@gmail.com" required>
+
+    <label for="password">Mot de passe ( pas nécessaire/not necessary ) :</label>
+    <input type="password" id="password" name="password_facultative" placeholder="Au moins 6 caractères" minlength="6">
+
+    <label for="tel">Téléphone (+228 style Lomé svp) :</label>
+    <input type="tel" id="tel" name="tel" placeholder="+228 XX XX XX XX" pattern="\+228[0-9\s-]{8,12}" required>
+
+    <label for="age">Ton âge (sois honnête frr) :</label>
+    <input type="number" id="age" name="age" placeholder="Entre 13 et 100" min="13" max="100" required>
+
+    <div class="radio-group">
+      <label>T'es un :</label><br>
+      <input type="radio" id="garcon" name="genre" value="Garçon" required> <label for="garcon">Garçon 💪</label><br>
+      <input type="radio" id="fille" name="genre" value="Fille"> <label for="fille">Fille 🔥</label><br>
+      <input type="radio" id="autre" name="genre" value="Autre"> <label for="autre">Autre / Pas d'ton business 🦁</label>
+    </div>
+
+    <label for="pays">Pays (t'es où là ?) :</label>
+    <select id="pays" name="pays" required>
+      <option value="Togo">Togo (Lomé la capitale du swag) 🇹🇬</option>
+      <!-- ajoute d'autres si tu veux -->
+    </select>
+
+    <div class="checkbox-group">
+      <label>Tu kiffes quoi ? (plusieurs OK) :</label><br>
+      <input type="checkbox" id="foot" name="kiffs[]" value="Foot"> <label for="foot">Foot ⚽</label><br>
+      <input type="checkbox" id="musique" name="kiffs[]" value="Musique"> <label for="musique">Musique afrobeat 🎶</label><br>
+      <input type="checkbox" id="jeux" name="kiffs[]" value="Jeux"> <label for="jeux">Jeux vidéo / Fifa 🎮</label><br>
+      <input type="checkbox" id="manger" name="kiffs[]" value="Manger"> <label for="manger">Fufu / attiéké 🍲</label><br>
+      <input type="checkbox" id="autre" name="kiffs[]" value="Autre"> <label for="autre">Autre chose de ouf 😜</label>
+    </div>
+
+    <label for="receiveDate">Quand veux-tu recevoir ton message dans le futur ?</label>
+    <input type="date" id="receiveDate" name="receive_date" required>
+
+    <label for="dinguerie">ÉCRIT UN MESSAGE À TON FUTUR TOI:</label>
+    <textarea id="dinguerie" name="dinguerie" placeholder="Écris ton histoire de fou... ou juste 'salut Zack t'es le goat' 😎" required></textarea>
+
+    <button type="submit">ENVOYER DANS LE FUTUR 🚀</button>
+  </form>
+
+  <div id="form-status" style="margin-top:20px; font-size:1.3em; color:#006a4e;"></div>  <!-- Zone pour afficher "Envoyé !" -->
+
+  <div class="dedicaces-container">
+    <h2 class="titre-dedicaces">Dédicaces spéciales ❤️</h2>
+  
+    <ol class="liste-dedicaces">
+      <li class="position-1">
+        <span class="medaille">🥇</span>
+        Farouk
+        <span class="surnom">le frère, le sang, le boss, l’original, le number one incontesté</span>
+      </li>
+
+      <li class="position-1">
+        <span class="medaille">🥈</span>
+        Hassan
+        <span class="surnom">le frère, le sang, le boss, l’original, le goat kw</span>
+      </li>
+      <li class="position-2">
+        <span class="medaille">🥉</span>
+        Félix
+        <span class="surnom">le crack discret qui arrive toujours 3ᵉ… mais en vrai il gagne dans nos cœurs</span>
+      </li>
+    
+      <li class="position-3">
+        <span class="medaille">🏅</span>
+        Prunelle
+        <span class="surnom">la reine des vibes, la tornade douce, 4ᵉ mais jamais dernière dans nos mémoires</span>
+      </li>
+    
+      <li class="position-4">
+        <span class="medaille">✨</span>
+        Anifa
+        <span class="surnom">la pépite qui monte, la future légende, déjà 5ᵉ du classement des chouchous</span>
+      </li>
+    </ol>
+  </div>
+
+  <footer>
+    J'ai galéré avant de coder ce site ! 😭<br>
+    Fait avec amour (et nostalgie HTML) par Zack ou Razak si vous préférez à Lomé – 2026 🔥 
+  </footer>
+
   <script>
+    // Bloque dates passées pour le receiveDate
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('receiveDate').setAttribute('min', today);
+
+    // Roast aléatoire marrant au chargement
+    const roasts = [
+      "T'as rempli ça pour de vrai ou juste pour voir si Zack est toujours en vie ? 😂",
+      "Si t'écris pas de dinguerie, ton message futur dira juste 't'es nul' 😏",
+      "Lomé connection faible ? Patience, ton futur toi t'attend... ou pas 🔥",
+      "Remplis vite avant que Félix te vole ton pseudo goat 🦁",
+      "T'es le 1er... ou le 1000ème ? Mystère 😈"
+    ];
+    const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+    document.getElementById('roast').textContent = randomRoast;
+
+    // Gestion envoi formulaire (sans recharger la page)
+    const form = document.querySelector('form');
+    const statusDiv = document.getElementById('form-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusDiv.textContent = 'Envoi dans le futur... attends 2 sec 😏';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          statusDiv.innerHTML = 'Envoyé ! Ton message est parti dans le futur 🚀<br>Check tes mails plus tard.';
+          form.reset();  // Vide le form
+        } else {
+          statusDiv.textContent = 'Oups, y’a eu un couac 😭 Réessaie.';
+        }
+      } catch (error) {
+        statusDiv.textContent = 'Pas de réseau ? Le futur attendra un peu...';
+      }
+    });
+
     const sidebar   = document.getElementById('sidebar');
     const toggleBtn = document.getElementById('toggleBtn');
     const closeBtn  = document.getElementById('closeBtn');
@@ -441,9 +422,4 @@
   </script>
 
 </body>
-
-    
-
-</body>
-        </html>
-        
+  </html>
